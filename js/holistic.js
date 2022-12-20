@@ -3,6 +3,7 @@ const out4 = document.getElementsByClassName('output4')[0];
 const controlsElement4 = document.getElementsByClassName('control4')[0];
 const canvasCtx4 = out4.getContext('2d');
 
+
 const fpsControl = new FPS();
 const spinner = document.querySelector('.loading');
 spinner.ontransitionend = () => {
