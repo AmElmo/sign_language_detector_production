@@ -2,40 +2,27 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.css" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="demo.css" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.1/camera_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.2/drawing_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.1/holistic.js" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/@mediapipe/holistic/holistic.js" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.2.0/dist/tf.min.js"></script>
 </head>
 
 <body>
+  <div class="container">
+    <h1 style="font-size:50px; font-family: Trebuchet MS;" id="prediction">Sign Language Symptoms Detector</h1>
 
-      <video class="input_video4" style="display: none;"></video>
+    <video class="input_video" style="display: none;"></video>
+    <canvas class="output_canvas" width="1000px" height="600px"></canvas>
 
-      <!-- MEDIAPIPE OUTPUT -->
-      <div class="column">
-        <article class="panel is-info">
-          <p class="panel-heading">
-            Mediapipe Face, Hands & Pose Detection
-          </p>
-          <div class="panel-block">
-            <canvas class="output4" width="1000px" height="800px"></canvas>
-          </div>
-        </article>
-      </div>
+    <h2>Try detecting these symptoms:</h2>
+
     </div>
 
-    <div class="loading">
-      <div class="spinner"></div>
-    </div>
-  <div style="visibility: hidden" class="control4">
   </div>
-
-  <script type="text/javascript" src="./js/holistic.js"></script>
 </body>
+
+<script type="module" src="js/translator.js" ></script>
+
 </html>
