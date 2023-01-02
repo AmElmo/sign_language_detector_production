@@ -5,6 +5,9 @@ import {
 } from '@mediapipe/drawing_utils/drawing_utils';
 import { Camera } from '@mediapipe/camera_utils/camera_utils';
 import { holistic } from '@mediapipe/holistic/holistic'
+import { POSE_CONNECTIONS } from '@mediapipe/pose/pose'
+import { HAND_CONNECTIONS } from '@mediapipe/hands/hands'
+import { FACEMESH_TESSELATION } from '@mediapipe/face_mesh/face_mesh'
 
 const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
