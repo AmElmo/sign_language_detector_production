@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@mediapipe/holistic": "^0.5.1635989137",
     "@tensorflow/tfjs": "^4.1.0",
+=======
+>>>>>>> f7bba593713f865df242db1806225bca57dc93db
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "^4.0.0"
