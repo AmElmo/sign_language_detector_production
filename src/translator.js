@@ -15,15 +15,12 @@ var dict_words = {
   1: "Sore throat 🤒",
   2: "Cough 😷",
   3: "Fever 🤒",
-  4:"",
-  5:"",
-  6:"",
-  7:"",
-  8:"",
-  9:""
+  4: "Stomach aches 😖",
+  5: "Tired 😓",
+  6: "Runny nose 🤧",
+  7: "Nausea 🤢",
+  8: "Trouble breathing 🫁"
 };
-
-'headache', 'soar throat', 'cough', 'fever', 'stomach aches', 'tired', 'runny nose', 'nausea', 'trouble breathing'
 
 function onResults(results) {
   canvasCtx.save();
@@ -144,8 +141,8 @@ holistic.setOptions({
   enableSegmentation: true,
   smoothSegmentation: true,
   refineFaceLandmarks: false,
-  minDetectionConfidence: 0.5,
-  minTrackingConfidence: 0.5
+  minDetectionConfidence: 0.7,
+  minTrackingConfidence: 0.7
 });
 holistic.onResults(onResults);
 
