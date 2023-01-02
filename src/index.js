@@ -1,3 +1,9 @@
+import * as tf from '@tensorflow/tfjs';
+import {
+  drawConnectors,
+  drawLandmarks,
+} from '@mediapipe/drawing_utils/drawing_utils';
+import { Camera } from '@mediapipe/camera_utils/camera_utils';
 
 const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
