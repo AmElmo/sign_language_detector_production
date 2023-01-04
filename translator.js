@@ -7,7 +7,7 @@ const canvasCtx = canvasElement.getContext('2d');
 const translation = document.getElementById('prediction');
 
 // LOAD MODEL HERE !
-const model_sign_language = tf.loadLayersModel('https://storage.googleapis.com/sign_language_cnn_lstm_layers/model.json');
+const model_sign_language = tf.loadGraphModel('https://storage.googleapis.com/sign_language_graph_model_v2/model.json');
 console.log(typeof model)
 
 const list_poses = []
@@ -82,6 +82,7 @@ function onResults(results) {
   if (list_poses.length > 29) {
     console.log(list_poses.length)
     console.log(JSON.stringify(list_poses))
+    console.log(list_poses)
 
     const y = tf.tensor2d(list_poses);
     const axs = 0;
@@ -90,18 +91,20 @@ function onResults(results) {
     // Specific reshaping for graph model
     const list_poses_3D = list_poses_3D_1.expandDims(3)
 
-    console.log(list_poses_3D)
+    console.log(list_poses_3D.shape)
 
     console.log("Pushing to model!!!")
 
     async function processModel(){
-      const model = await tf.loadLayersModel('https://storage.googleapis.com/sign_language_cnn_lstm_layers/model.json');
-      const prediction_1 = await model.executeAsync(list_poses_3D);
-      console.log(prediction_1)
-      model.predict(list_poses_3D).print()
+      const model = await tf.loadGraphModel('https://storage.googleapis.com/sign_language_graph_model_v2/model.json');
 
-      const predictions = await model.executeAsync(list_poses_3D).data()
-      console.log(predictions)
+      const prediction_1 = await model.executeAsync(list_poses_3D, "StatefulPartitionedCall/sequential_2/dense_3/BiasAdd/ReadVariableOp");
+      console.log(prediction_1)
+
+      // model.predict(list_poses_3D).print()
+
+      // const predictions = await model.executeAsync(list_poses_3D, ['StatefulPartitionedCall/sequential_2/dense_3/BiasAdd/ReadVariableOp']).data()
+      // console.log(predictions)
 
       const preds = prediction_1.dataSync();
       console.log(preds)
