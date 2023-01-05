@@ -1,13 +1,5 @@
-import * as tf from '@tensorflow/tfjs';
-import {
-  drawConnectors,
-  drawLandmarks,
-} from '@mediapipe/drawing_utils/drawing_utils';
-import { Camera } from '@mediapipe/camera_utils/camera_utils';
-import { holistic } from '@mediapipe/holistic/holistic'
-import { POSE_CONNECTIONS } from '@mediapipe/pose/pose'
-import { HAND_CONNECTIONS } from '@mediapipe/hands/hands'
-import { FACEMESH_TESSELATION } from '@mediapipe/face_mesh/face_mesh'
+
+// import * as tf from "@tensorflow/tfjs"
 
 const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
@@ -22,7 +14,7 @@ const list_poses = []
 
 var dict_words = {
   0: "Headache 🧠",
-  1: "Sore throat 🤒",
+  1: "Sore throat 😵",
   2: "Cough 😷",
   3: "Fever 🤒",
   4: "Stomach aches 😖",
@@ -89,6 +81,7 @@ function onResults(results) {
 
   if (list_poses.length > 29) {
     console.log(list_poses.length)
+    console.log(JSON.stringify(list_poses))
 
     const y = tf.tensor2d(list_poses);
     const axs = 0;
@@ -141,6 +134,10 @@ function onResults(results) {
 }
 
 
+
+const holistic = new Holistic({locateFile: (file) => {
+  return `https://cdn.jsdelivr.net/npm/@mediapipe/holistic/${file}`;
+}});
 holistic.setOptions({
   modelComplexity: 1,
   smoothLandmarks: true,

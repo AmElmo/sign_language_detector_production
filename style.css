@@ -1,5 +1,4 @@
 h1 {text-align: center;}
-
 canvas {
 display: block;
 margin-left: auto;
@@ -21,4 +20,5 @@ h2 {
   font-family: Trebuchet MS;
   text-align: center;
   justify-self: center;
+
 }
