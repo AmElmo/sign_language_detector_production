@@ -7,7 +7,7 @@ const canvasCtx = canvasElement.getContext('2d');
 const translation = document.getElementById('prediction');
 
 // LOAD MODEL HERE !
-const model_sign_language = tf.loadLayersModel('https://storage.googleapis.com/sign-language-model/model.json');
+const model_sign_language = tf.loadGraphModel('https://storage.googleapis.com/sign_language_cnn_lstm_bis/model.json');
 console.log(typeof model)
 
 const list_poses = []
@@ -85,17 +85,22 @@ function onResults(results) {
 
     const y = tf.tensor2d(list_poses);
     const axs = 0;
-    const list_poses_3D = y.expandDims(axs)
+    const list_poses_3D_1 = y.expandDims(axs)
+
+    // Specific reshaping for graph model
+    const list_poses_3D = list_poses_3D_1.reshape(-1,30,1662,1)
+
+    console.log(list_poses_3D)
 
     console.log("Pushing to model!!!")
 
     async function processModel(){
-      const model = await tf.loadLayersModel('https://storage.googleapis.com/sign-language-model/model.json');
-      const prediction_1 = model.predict(list_poses_3D);
+      const model = await tf.loadGraphModel('https://storage.googleapis.com/sign_language_cnn_lstm_bis/model.json');
+      const prediction_1 = await model.executeAsync(list_poses_3D);
       console.log(prediction_1)
       model.predict(list_poses_3D).print()
 
-      const predictions = model.predict(list_poses_3D).data()
+      const predictions = await model.executeAsync(list_poses_3D).data()
       console.log(predictions)
 
       const preds = prediction_1.dataSync();
