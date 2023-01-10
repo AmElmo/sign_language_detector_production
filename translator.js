@@ -7,7 +7,7 @@ const canvasCtx = canvasElement.getContext('2d');
 const translation = document.getElementById('prediction');
 
 // LOAD MODEL HERE !
-const model_sign_language = tf.loadLayersModel('https://storage.googleapis.com/sign-language-model_3/model.json');
+const model_sign_language = tf.loadLayersModel('https://storage.googleapis.com/sign-language-model_v3/model.json');
 console.log(typeof model)
 
 const list_poses = []
@@ -93,7 +93,7 @@ function onResults(results) {
     console.log("Pushing to model!!!")
 
     async function processModel(){
-      const model = await tf.loadLayersModel('https://storage.googleapis.com/sign-language-model_3/model.json');
+      const model = await tf.loadLayersModel('https://storage.googleapis.com/sign-language-model_v3/model.json');
 
       const prediction_1 = model.predict(list_poses_3D);
       console.log(prediction_1)
