@@ -78,7 +78,6 @@ function onResults(results) {
 
   console.log(list_poses.length)
 
-
   if (list_poses.length > 29) {
     console.log(list_poses.length)
     console.log(JSON.stringify(list_poses))
