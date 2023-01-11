@@ -7,4 +7,4 @@ It is a simple app that:
 - translates the sequences with the relevant symptom
 
 
-For more details, see project repo
+For more details, see [project repository](https://github.com/AmElmo/sign_language_detector).
