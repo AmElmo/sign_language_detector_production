@@ -1,4 +1,5 @@
 h1 {text-align: center;}
+
 canvas {
 display: block;
 margin-left: auto;
@@ -10,9 +11,17 @@ margin-right: auto;
   align-items: center;
   justify-content: center;
 }
+
 .gif_individual {
-  width:250px;
+  width:300px;
   height: 180px;
+}
+
+.gifs {
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
 }
 
 h2 {
