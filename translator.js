@@ -153,7 +153,7 @@ holistic.onResults(onResults);
 
 let element = document.getElementById('prediction');
 
-if (holistic.getoptions().minDetectionConfidence < 0.7) {
+if (holistic.setOptions.minDetectionConfidence < 0.7) {
   element.innerHTML = "Minimum detection confidence is low";
 }
 
