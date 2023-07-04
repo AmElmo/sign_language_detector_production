@@ -116,7 +116,6 @@ function onResults(results) {
 
   }
 
-
     processModel()
 
     list_poses.length = 0
@@ -154,7 +153,7 @@ holistic.onResults(onResults);
 
 let element = document.getElementById('prediction');
 
-if (holistic.setoptions().minDetectionConfidence < 0.7) {
+if (holistic.getoptions().minDetectionConfidence < 0.7) {
   element.innerHTML = "Minimum detection confidence is low";
 }
 
