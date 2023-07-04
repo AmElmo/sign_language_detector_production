@@ -111,8 +111,8 @@ function onResults(results) {
         if (v > 0.80) {
           console.log(dict_words[i])
           translation.innerHTML = dict_words[i]
-        } else if (v < 0.8) {
-          translation.innerHTML = "Other text when v < 0.8";
+        } else {
+          translation.innerHTML = "Make some signs 👋";
         }
     }
 

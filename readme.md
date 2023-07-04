@@ -8,3 +8,8 @@ It is a simple app that:
 
 
 For more details, see [project repository](https://github.com/AmElmo/sign_language_detector).
+
+
+TODOs:
+- ~~fix the innerHTML so it displays a different message when there is no prediction~~
+- retrain model to have better predictions (currently completely off)
