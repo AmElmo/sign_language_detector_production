@@ -116,6 +116,7 @@ function onResults(results) {
 
   }
 
+
     processModel()
 
     list_poses.length = 0
