@@ -111,6 +111,8 @@ function onResults(results) {
         if (v > 0.80) {
           console.log(dict_words[i])
           translation.innerHTML = dict_words[i]
+        } else if (v < 0.8) {
+          translation.innerHTML = "Make some signs 👋";
         }
     }
 
@@ -150,10 +152,6 @@ holistic.setOptions({
   minTrackingConfidence: 0.7
 });
 holistic.onResults(onResults);
-
-if (holistic.setOptions.minDetectionConfidence < 0.7) {
-  translation.innerHTML = "Make some signs 👋";
-}
 
 const camera = new Camera(videoElement, {
   onFrame: async () => {
