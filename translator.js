@@ -122,7 +122,7 @@ function onResults(results) {
 
   // If no match is found, set a default value
   if (foundMatch === false) {
-    translation.innerHTML = "Make some signs 👋";
+    translation.innerHTML = "...";
   }
 
     processModel()
