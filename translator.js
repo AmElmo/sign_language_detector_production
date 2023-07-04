@@ -92,6 +92,9 @@ function onResults(results) {
 
     console.log("Pushing to model!!!")
 
+    // Define a variable to track whether a match was found
+    let foundMatch = false;
+
     async function processModel(){
       const model = await tf.loadLayersModel('https://storage.googleapis.com/sign-language-model_v3/model.json');
 
@@ -118,7 +121,7 @@ function onResults(results) {
   }
 
   // If no match is found, set a default value
-  if (!foundMatch) {
+  if (foundMatch === false) {
     translation.innerHTML = "Make some signs 👋";
   }
 
