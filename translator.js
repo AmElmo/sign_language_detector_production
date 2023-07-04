@@ -138,8 +138,6 @@ function onResults(results) {
   canvasCtx.restore();
 }
 
-
-
 const holistic = new Holistic({locateFile: (file) => {
   return `https://cdn.jsdelivr.net/npm/@mediapipe/holistic/${file}`;
 }});
@@ -162,3 +160,14 @@ const camera = new Camera(videoElement, {
   height: 720
 });
 camera.start();
+
+// q: how do I reference the minDetectionConfidence from the holistic object?
+// a: I can't, but I can reference it from the holistic options object
+// q: how do you do that reference it from the holistic options object?
+// a:
+
+let element = document.getElementById('prediction');
+
+if (holistics.setoptions.minDetectionConfidence < 0.7) {
+  element.innerHTML = "Minimum detection confidence is low";
+}
