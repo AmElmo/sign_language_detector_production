@@ -151,10 +151,8 @@ holistic.setOptions({
 });
 holistic.onResults(onResults);
 
-let element = document.getElementById('prediction');
-
 if (holistic.setOptions.minDetectionConfidence < 0.7) {
-  element.innerHTML = "Minimum detection confidence is low";
+  translation.innerHTML = "Make some signs 👋";
 }
 
 const camera = new Camera(videoElement, {
