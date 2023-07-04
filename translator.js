@@ -111,13 +111,15 @@ function onResults(results) {
         if (v > 0.80) {
           console.log(dict_words[i])
           translation.innerHTML = dict_words[i]
-        } else {
-          translation.innerHTML = "Make some signs 👋";
+          break; // Exit the loop after finding a match, if desired
         }
     }
-
   }
 
+  // If no match is found, set a default value
+  if (!translation.innerHTML) {
+    translation.innerHTML = "Make some signs 👋";
+}
 
     processModel()
 
