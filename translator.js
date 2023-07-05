@@ -17,11 +17,11 @@ var dict_words = {
   1: "Sore throat 😵",
   2: "Cough 😷",
   3: "Fever 🤒",
-  4: "Stomach aches 😖",
+  4: "Trouble breathing 🫁",
   5: "Tired 😓",
   6: "Runny nose 🤧",
   7: "Nausea 🤢",
-  8: "Trouble breathing 🫁"
+  8: "Stomach aches 😖"
 };
 
 function onResults(results) {
