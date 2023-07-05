@@ -12,4 +12,5 @@ For more details, see [project repository](https://github.com/AmElmo/sign_langua
 
 TODOs:
 - ~~fix the innerHTML so it displays a different message when there is no prediction~~
-- retrain model to have better predictions (currently completely off)
+- ~~retrain model to have better predictions (currently completely off)~~
+- Change the model in production
